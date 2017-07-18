@@ -28,7 +28,7 @@ import com.alibaba.dubbo.remoting.telnet.TelnetHandler;
 
 /**
  * ProviderConfig
- * 
+ *
  * @see com.alibaba.dubbo.config.ProtocolConfig
  * @see com.alibaba.dubbo.config.ServiceConfig
  * @author william.liangf
@@ -51,37 +51,37 @@ public class ProviderConfig extends AbstractServiceConfig {
 
     // 线程池类型
     private String              threadpool;
-    
+
     // 线程池大小(固定大小)
     private Integer             threads;
 
     // IO线程池大小(固定大小)
     private Integer             iothreads;
-    
+
     // 线程池队列大小
     private Integer             queues;
 
     // 最大接收连接数
     private Integer             accepts;
-    
+
     // 协议编码
     private String              codec;
-    
+
     // 序列化方式
     private String              serialization;
 
     // 字符集
     private String              charset;
-    
+
     // 最大请求数据长度
     private Integer             payload;
 
     // 缓存区大小
     private Integer             buffer;
-    
+
     // 网络传输方式
     private String              transporter;
-    
+
     // 信息交换方式
     private String              exchanger;
 
@@ -90,13 +90,13 @@ public class ProviderConfig extends AbstractServiceConfig {
 
     // 对称网络组网方式
     private String              networker;
-    
+
     // 服务器端实现
     private String              server;
-    
+
     // 客户端实现
     private String              client;
-    
+
     // 支持的telnet命令，多个命令用逗号分隔
     private String              telnet;
 
@@ -105,13 +105,13 @@ public class ProviderConfig extends AbstractServiceConfig {
 
     // status检查
     private String              status;
-    
+
     // 停止时等候时间
     private Integer             wait;
-    
+
     // 是否为缺省
     private Boolean             isDefault;
-    
+
     @Deprecated
     public void setProtocol(String protocol) {
         this.protocols = Arrays.asList(new ProtocolConfig[] {new ProtocolConfig(protocol)});
@@ -126,21 +126,21 @@ public class ProviderConfig extends AbstractServiceConfig {
     public void setDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
-    
+
     @Parameter(excluded = true)
     public String getHost() {
         return host;
     }
-    
+
     public void setHost(String host) {
         this.host = host;
     }
-    
+
     @Parameter(excluded = true)
     public Integer getPort() {
         return port;
     }
-    
+
     @Deprecated
     public void setPort(Integer port) {
         this.port = port;
@@ -175,11 +175,11 @@ public class ProviderConfig extends AbstractServiceConfig {
         checkExtension(ThreadPool.class, "threadpool", threadpool);
         this.threadpool = threadpool;
     }
-    
+
     public Integer getThreads() {
         return threads;
     }
-    
+
     public void setThreads(Integer threads) {
         this.threads = threads;
     }
@@ -195,15 +195,15 @@ public class ProviderConfig extends AbstractServiceConfig {
     public Integer getQueues() {
         return queues;
     }
-    
+
     public void setQueues(Integer queues) {
         this.queues = queues;
     }
-    
+
     public Integer getAccepts() {
         return accepts;
     }
-    
+
     public void setAccepts(Integer accepts) {
         this.accepts = accepts;
     }
@@ -219,7 +219,7 @@ public class ProviderConfig extends AbstractServiceConfig {
     public String getSerialization() {
         return serialization;
     }
-    
+
     public void setSerialization(String serialization) {
         this.serialization = serialization;
     }
@@ -235,7 +235,7 @@ public class ProviderConfig extends AbstractServiceConfig {
     public Integer getPayload() {
         return payload;
     }
-    
+
     public void setPayload(Integer payload) {
         this.payload = payload;
     }
@@ -255,7 +255,7 @@ public class ProviderConfig extends AbstractServiceConfig {
     public void setServer(String server) {
         this.server = server;
     }
-    
+
     public String getClient() {
         return client;
     }
@@ -267,7 +267,7 @@ public class ProviderConfig extends AbstractServiceConfig {
     public String getTelnet() {
         return telnet;
     }
-    
+
     public void setTelnet(String telnet) {
         checkMultiExtension(TelnetHandler.class, "telnet", telnet);
         this.telnet = telnet;
@@ -285,7 +285,7 @@ public class ProviderConfig extends AbstractServiceConfig {
     public String getStatus() {
         return status;
     }
-    
+
     public void setStatus(String status) {
         checkMultiExtension(StatusChecker.class, "status", status);
         this.status = status;
@@ -325,20 +325,20 @@ public class ProviderConfig extends AbstractServiceConfig {
     public Integer getActives() {
         return super.getActives();
     }
-    
+
     public String getTransporter() {
         return transporter;
     }
-    
+
     public void setTransporter(String transporter) {
         checkExtension(Transporter.class, "transporter", transporter);
         this.transporter = transporter;
     }
-    
+
     public String getExchanger() {
         return exchanger;
     }
-    
+
     public void setExchanger(String exchanger) {
         checkExtension(Exchanger.class, "exchanger", exchanger);
         this.exchanger = exchanger;
@@ -369,7 +369,7 @@ public class ProviderConfig extends AbstractServiceConfig {
 
     public void setDispatcher(String dispatcher) {
         checkExtension(Dispatcher.class, Constants.DISPATCHER_KEY, exchanger);
-        checkExtension(Dispatcher.class, "dispather", exchanger);
+        checkExtension(Dispatcher.class, "dispatcher", exchanger);
         this.dispatcher = dispatcher;
     }
 
@@ -384,7 +384,7 @@ public class ProviderConfig extends AbstractServiceConfig {
     public Integer getWait() {
         return wait;
     }
-    
+
     public void setWait(Integer wait) {
         this.wait = wait;
     }

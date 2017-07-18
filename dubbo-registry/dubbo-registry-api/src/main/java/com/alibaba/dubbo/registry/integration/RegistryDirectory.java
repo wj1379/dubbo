@@ -663,7 +663,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
      *
      * @param <T>
      */
-    private static class InvokerDelegete<T> extends InvokerWrapper<T>{
+    public static class InvokerDelegete<T> extends InvokerWrapper<T>{
         private URL providerUrl;
         public InvokerDelegete(Invoker<T> invoker, URL url, URL providerUrl) {
             super(invoker, url);
